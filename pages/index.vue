@@ -8,7 +8,7 @@
                 <button @click="editContact(contact.id)">Editar</button>
                 <button @click="removeContact(contact.id)">Excluir</button>
             </template>
-            
+
         </ListItem>
 
     </div>
@@ -19,9 +19,17 @@
 const router = useRouter();
 const { contactList, deleteContact } = useContacts();
 const contacts = contactList();
-    const addContact = () => {
-        router.push('/form');
-    }
+
+useHead({
+    title: 'Contatinho.com',
+    meta: [
+        { name:"description", content:"Aplicativo de lista de contatos." }
+    ]
+});
+
+const addContact = () => {
+    router.push('/form');
+}
 
 const editContact = (id) => {
     router.push({ path: '/form', query: { id } })

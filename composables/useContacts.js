@@ -18,7 +18,7 @@ export default () => {
     }
 
     const deleteContact = (id) => {
-        contactList().value = contactList.value.filter(contact => contact.id === id)
+        contactList().value = contactList().value.filter(contact => contact.id !== id)
     }
 
     const getContact = (id) => {
